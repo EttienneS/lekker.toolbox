@@ -4,8 +4,12 @@ export class ToolboxItem extends Component {
   render() {
     return (
       <div>
-        <p>{this.props.name}:{this.props.value}</p>
+        <h3>{this.props.name}</h3>
+        <p>{this.props.description}</p>
+        <a className="App-link" href={this.props.url}>Download</a>
       </div>
     );
   }
 }
+
+export default ToolboxItem;
