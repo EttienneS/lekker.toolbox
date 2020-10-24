@@ -6,6 +6,7 @@ export const tools = (state = items, action) => {
     case CREATE_TOOL: {
       const { name } = payload;
       const newTool = {
+        id: state.length,
         name,
         description: "New tool, no description given",
         link: "NA",
