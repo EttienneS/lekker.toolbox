@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
-import { ToolboxItemService } from "./ToolboxItemService";
-import { ToolboxItemContainer } from "./ToolboxItemContainer";
+import { ToolService } from "./ToolService";
+import { ToolList } from "./ToolList";
 
 class App extends React.Component {
-  itemService = new ToolboxItemService();
+  itemService = new ToolService();
 
   render() {
 
@@ -13,7 +13,7 @@ class App extends React.Component {
         <header className="App-header">
           <h1>Awe!</h1>
           <h2>Available tools:</h2>
-          <ToolboxItemContainer toolboxItems={this.itemService.getItems()}></ToolboxItemContainer>
+          <ToolList toolboxItems={this.itemService.getItems()}></ToolList>
         </header>
       </div>
     );

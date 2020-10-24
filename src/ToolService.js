@@ -1,4 +1,4 @@
-export class ToolboxItemService {
+export class ToolService {
   items = [
     {
       id: 1,
