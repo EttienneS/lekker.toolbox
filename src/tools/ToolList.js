@@ -3,8 +3,9 @@ import AddToolForm from "./AddToolForm";
 import ToolItem from "./ToolItem";
 
 import { connect } from "react-redux";
+import { toggleFavouriteTool } from "./actions";
 
-const ToolList = ({ tools }) => {
+const ToolList = ({ tools, onFavouritePressed }) => {
   return (
     <div>
       <div className="new-item-container">
@@ -13,7 +14,7 @@ const ToolList = ({ tools }) => {
 
       <div className="existing-item-container">
         {tools.map((tool) => (
-          <ToolItem key={tool.id} tool={tool}></ToolItem>
+          <ToolItem key={tool.id} tool={tool} onFavouritePressed={onFavouritePressed}></ToolItem>
         ))}
       </div>
     </div>
@@ -24,4 +25,8 @@ const mapStateToProps = (state) => ({
   tools: state.tools,
 });
 
-export default connect(mapStateToProps)(ToolList);
+const mapDispatchToProps = (dispatch) => ({
+  onFavouritePressed: (name) => dispatch(toggleFavouriteTool(name)),
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(ToolList);

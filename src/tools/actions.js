@@ -9,3 +9,9 @@ export const removeTool = (name) => ({
   type: REMOVE_TOOL,
   payload: { name: name },
 });
+
+export const TOGGLE_FAVOURITE_TOOL = "TOGGLE_FAVOURITE_TOOL";
+export const toggleFavouriteTool = (name) => ({
+  type: TOGGLE_FAVOURITE_TOOL,
+  payload: { name: name },
+});
